@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping>
+     <class name="com.hibernate.demo.User" table="userT">
+         <!-- 指定缓存的同步策略 -->
+         <cache usage="read-only"></cache>
+         <!-- 持久化类的唯一标示 对应主键 -->
+         <id name="userName" column="userName" type="string" length="20">
+             <generator class="assigned" ></generator>
+         </id>
+         <!-- 密码 -->
+         <property name="password" type="string" not-null="true" length="16">
+             <column name="password"/>
+         </property>
+         <!-- email -->
+         <property name="mail" type="string" length="50">
+             <column name="eMail"/>
+         </property>
+     </class>
+ </hibernate-mapping>

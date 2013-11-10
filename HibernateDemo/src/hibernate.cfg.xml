@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+ "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+ <hibernate-configuration>
+     <session-factory>
+         <!-- 开启二级缓存 -->
+         <property name="hibernate.cache.use_second_level_cache">true</property>
+         <!-- 指定缓存产品提供商 -->
+         <!--<property name="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</property>  -->
+         <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property> 
+         
+         <!-- 数据库驱动 -->
+         <property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+         <!-- 数据库连接的URL -->
+         <property name="connection.url">jdbc:sqlserver://localhost:1433;DatabaseName=iLifeDb</property>
+         <!-- 连接数据库的用户名 -->
+         <property name="connection.username">sa</property>
+         <!-- 密码 -->
+         <property name="connection.password">kong19920213</property>
+         <!-- Hibernate方言 -->
+         <property name="dialect">org.hibernate.dialect.SQLServer2008Dialect</property>
+         <!-- 打印sql语句 -->
+         <property name="show_sql">true</property>
+         
+         
+         <!-- 映射问价 -->
+         <mapping resource="com/hibernate/demo/User.hbm.xml"/>
+     </session-factory>
+ </hibernate-configuration>
